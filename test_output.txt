@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/secure-auth-lab
+plugins: platformdirs-4.13.3, anyio-4.15.1
+collecting ... collected 16 items
+
+tests/test_auth.py::test_password_is_hashed_not_plaintext PASSED         [  6%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[not-an-email-StrongPass1] PASSED [ 12%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[alice@example.com-short1A] PASSED [ 18%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[alice@example.com-alllowercase1] PASSED [ 25%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[alice@example.com-NoDigitsHere] PASSED [ 31%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[None-StrongPass1] PASSED [ 37%]
+tests/test_auth.py::test_server_side_validation_rejects_bad_input[alice@example.com-12345678] PASSED [ 43%]
+tests/test_auth.py::test_valid_login_and_me PASSED                       [ 50%]
+tests/test_auth.py::test_cookie_flags PASSED                             [ 56%]
+tests/test_auth.py::test_logout_destroys_session PASSED                  [ 62%]
+tests/test_auth.py::test_expired_session_is_rejected PASSED              [ 68%]
+tests/test_auth.py::test_no_session_is_rejected PASSED                   [ 75%]
+tests/test_auth.py::test_tampered_cookie_is_rejected PASSED              [ 81%]
+tests/test_auth.py::test_generic_error_same_for_wrong_email_and_password PASSED [ 87%]
+tests/test_auth.py::test_brute_force_is_rate_limited PASSED              [ 93%]
+tests/test_auth.py::test_successful_login_resets_counter PASSED          [100%]
+
+============================== 16 passed in 4.81s ==============================
